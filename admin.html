@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel do sistema — Clínica Vitalis</title>
+  <meta name="description" content="Painel de demonstração: leads, agendamentos e conversões do site da Clínica Vitalis." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Painel do sistema — Clínica Vitalis" />
+  <meta property="og:description" content="Painel de demonstração: leads, agendamentos e conversões do site da Clínica Vitalis." />
+  <meta property="og:image" content="/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Painel do sistema — Clínica Vitalis" />
+  <meta name="twitter:description" content="Painel de demonstração: leads, agendamentos e conversões do site da Clínica Vitalis." />
+  <meta name="twitter:image" content="/og.png" />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0d9488" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="assets/css/style.css?v=7" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3c-2.5 0-3.5 1-5 1S4 3.5 3.5 5.5 5 12 6 15.5 7.5 21 8.5 21s1-2 1.5-4 .5-3 2-3 1.5 1 2 3 .5 4 1.5 4 1.5-2 2.5-5.5 2-8 1.5-10S15 5 14 5s-2.5-1-5-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span>Vitalis<small>Odontologia</small></span></a>
+      <nav class="nav__links" aria-label="Navegação principal"><a href="index.html">Site</a><a href="servicos.html">Tratamentos</a><a href="blog.html">Blog</a><a href="contato.html">Contato</a></nav>
+      <div class="nav__actions">
+        <button class="icon-btn" data-theme-toggle aria-label="Alternar tema"><svg class="ic-moon" viewBox="0 0 24 24" fill="none"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="ic-sun" style="display:none" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <button class="icon-btn hamburger" aria-label="Abrir menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu"><a href="index.html">Site</a><a href="servicos.html">Tratamentos</a><a href="blog.html">Blog</a><a href="contato.html">Contato</a></div>
+
+  <main id="main">
+    <section class="section" style="padding-top:3rem">
+      <div class="container" style="max-width:1080px">
+
+        <!-- LOGIN -->
+        <div class="form-card" id="admin-auth" style="max-width:420px;margin-inline:auto">
+          <div class="center" style="margin-bottom:1.2rem">
+            <span class="pill" style="margin-inline:auto">Sistema de demonstração</span>
+            <h3 style="margin-top:.8rem">Painel do site</h3>
+            <p style="color:var(--muted);font-size:.9rem">Acesse as métricas de leads, agendamentos e conversões. Senha demo: <b>vitalis</b></p>
+          </div>
+          <form id="admin-login">
+            <div class="field"><label for="adm-pass">Senha</label><input id="adm-pass" type="password" required placeholder="••••••••" autocomplete="current-password" /></div>
+            <p id="adm-error" class="err" style="margin-bottom:.8rem" hidden>Senha incorreta. Tente "vitalis".</p>
+            <button class="btn btn--primary btn--block" type="submit">Entrar no painel</button>
+          </form>
+          <p style="text-align:center;margin-top:1rem;color:var(--muted);font-size:.85rem">Acesse com dados de exemplo: <a href="admin.html#demo" style="color:var(--brand-600);font-weight:700">Entrar em modo demonstração</a></p>
+        </div>
+
+        <!-- DASHBOARD -->
+        <div id="admin-dash" hidden>
+          <div class="flex between center-y wrap gap-1" style="margin-bottom:1.5rem">
+            <div>
+              <span class="eyebrow">Painel do sistema</span>
+              <h1 style="margin:.2rem 0 0">Leads e agendamentos</h1>
+              <p style="color:var(--muted);font-size:.92rem">Atualizado em tempo real conforme o site recebe contatos.</p>
+            </div>
+            <div class="flex center-y wrap gap-1">
+              <button class="btn btn--ghost" id="demo-btn">▶ Modo demonstração</button>
+              <button class="btn btn--ghost" id="export-btn">Exportar CSV</button>
+              <button class="btn btn--ghost" id="clear-btn">Limpar dados</button>
+              <button class="btn btn--primary" id="logout-btn">Sair</button>
+            </div>
+          </div>
+
+          <div class="grid g-4 kpis" style="margin-bottom:1.5rem;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">
+            <div class="card kpi"><span class="kpi-label">Total de contatos</span><b data-kpi="total">0</b><small style="color:var(--muted)" data-kpi="total-sub">formulários e cliques</small></div>
+            <div class="card kpi"><span class="kpi-label">Agendamentos</span><b data-kpi="agenda">0</b><small style="color:var(--muted)" data-kpi="agenda-sub">solicitações no site</small></div>
+            <div class="card kpi"><span class="kpi-label">WhatsApp</span><b data-kpi="wa">0</b><small style="color:var(--muted)" data-kpi="wa-sub">conversas iniciadas</small></div>
+            <div class="card kpi"><span class="kpi-label">Principal origem</span><b data-kpi="source" style="font-size:1.4rem;text-transform:capitalize">—</b><small style="color:var(--muted)" data-kpi="source-sub">ultimo contato em...</small></div>
+          </div>
+
+          <div class="card" style="margin-bottom:1.5rem">
+            <div class="flex between center-y gap-1" style="margin-bottom:.9rem">
+              <h3 style="margin:0">Origem dos contatos</h3>
+              <small style="color:var(--muted)">funil de canais</small>
+            </div>
+            <div id="origin-funnel" style="display:grid;gap:.65rem"></div>
+          </div>
+
+          <div class="card" style="margin-bottom:1.5rem">
+            <div class="flex between center-y gap-1" style="margin-bottom:.6rem">
+              <h3 style="margin:0">Contatos — últimos 14 dias</h3>
+              <small style="color:var(--muted)">por dia</small>
+            </div>
+            <canvas id="lead-chart" aria-label="Gráfico de contatos por dia" role="img"></canvas>
+          </div>
+
+          <div class="card table-scroll" style="padding:0">
+            <table class="admin-table">
+              <thead><tr><th>Data</th><th>Canal</th><th>Nome</th><th>Telefone</th><th>Origem</th><th>Detalhe</th></tr></thead>
+              <tbody id="leads-body"></tbody>
+            </table>
+            <p id="leads-empty" style="padding:1.2rem 1.4rem;color:var(--muted);font-size:.9rem" hidden>Nenhum contato ainda. Envie um formulário no site ou use o "Modo demonstração".</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" style="padding-top:2.5rem">
+    <div class="container">
+      <div class="footer__bottom">
+          <div class="seals" aria-label="Selos de conformidade">
+          <span class="seal"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Conforme LGPD</span>
+          <span class="seal"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Acessível · WCAG 2.1 AA</span>
+          <span class="seal"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="11" width="16" height="9" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 11V8a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.8"/></svg> Site seguro · HTTPS</span>
+        </div><span>© <span data-year>2026</span> Clínica Vitalis — painel de demonstração.</span><a href="index.html" style="color:inherit">Voltar ao site</a></div>
+    </div>
+  </footer>
+
+  <script type="module" src="/assets/js/main.js?v=6"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var LS = "vitalis-admin";
+      var SESSION = sessionStorage.getItem(LS);
+      var authEl = document.getElementById("admin-auth");
+      var dashEl = document.getElementById("admin-dash");
+      var loginBtn = document.getElementById("logout-btn");
+      var body = document.getElementById("leads-body");
+      var empty = document.getElementById("leads-empty");
+
+      var getLeads = function () { return (window.vitalisLeads && window.vitalisLeads.all()) || []; };
+      var saveLeads = function (l) { window.vitalisLeads && window.vitalisLeads.save(l); };
+
+      function fmtDate(iso) {
+        var d = new Date(iso);
+        return d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
+      }
+      var CANAIS = { "form-agenda": "Agendamento", "form-contato": "Formulário", "wa-float": "WhatsApp (botão)", "wa-header": "WhatsApp (menu)", "wa-cliente": "WhatsApp (paciente)", "wa-site": "WhatsApp" };
+
+      function render() {
+        var leads = getLeads();
+        empty.hidden = leads.length > 0;
+        body.innerHTML = "";
+        leads.slice(0, 12).forEach(function (l) {
+          var tr = document.createElement("tr");
+          tr.innerHTML = "<td>" + fmtDate(l.at) + "</td>" +
+            "<td><span class=\"pill\">" + (CANAIS[l.canal] || l.canal) + "</span></td>" +
+            "<td><b>" + (l.nome || "—") + "</b></td>" +
+            "<td>" + (l.telefone || "—") + "</td>" +
+            "<td><span style=\"text-transform:capitalize\">" + l.origem + "</span></td>" +
+            "<td style=\"color:var(--muted)\">" + (l.detalhe || "—") + "</td>";
+          body.appendChild(tr);
+        });
+
+        var ag = leads.filter(function (l) { return l.canal === "form-agenda"; }).length;
+        var waCt = leads.filter(function (l) { return l.canal.indexOf("wa-") === 0; }).length;
+        var origem = {};
+        leads.forEach(function (l) { origem[l.origem] = (origem[l.origem] || 0) + 1; });
+        var top = Object.keys(origem).sort(function (a, b) { return origem[b] - origem[a]; })[0] || "—";
+        var last = leads[0] ? fmtDate(leads[0].at) : "—";
+
+        document.querySelector("[data-kpi=total]").textContent = leads.length;
+        document.querySelector("[data-kpi=total-sub]").textContent = leads.length ? "últimos " + fmtDate(leads[leads.length - 1].at) + " a " + last : "sem contatos ainda";
+        document.querySelector("[data-kpi=agenda]").textContent = ag;
+        document.querySelector("[data-kpi=agenda-sub]").textContent = ag ? Math.round(ag / leads.length * 100) + "% do total" : "nenhuma solicitação";
+        document.querySelector("[data-kpi=wa]").textContent = waCt;
+        document.querySelector("[data-kpi=wa-sub]").textContent = waCt ? Math.round(waCt / leads.length * 100) + "% via WhatsApp" : "cliques em WhatsApp";
+        document.querySelector("[data-kpi=source]").textContent = top;
+        document.querySelector("[data-kpi=source-sub]").textContent = "último contato em " + last;
+
+        drawChart(leads);
+        drawFunnel(leads);
+      }
+
+      function drawFunnel(leads) {
+        var wrap = document.getElementById("origin-funnel");
+        var origem = {};
+        leads.forEach(function (l) { origem[l.origem] = (origem[l.origem] || 0) + 1; });
+        var total = leads.length || 1;
+        var colors = ["#0d9488", "#f59e0b", "#6366f1", "#ec4899", "#14b8a6"];
+        var order = Object.keys(origem).sort(function (a, b) { return origem[b] - origem[a]; });
+        if (!order.length) return;
+        wrap.innerHTML = "";
+        order.forEach(function (k, i) {
+          var pct = Math.round(origem[k] / total * 100);
+          var label = k === "(direto)" ? "Acesso direto" : k.charAt(0).toUpperCase() + k.slice(1);
+          var row = document.createElement("div");
+          row.style.cssText = "display:grid;gap:.3rem";
+          row.innerHTML =
+            '<div style="display:flex;justify-content:space-between;font-size:.85rem"><span>' +
+            label + '</span><b>' + origem[k] + ' · ' + pct + '%</b></div>' +
+            '<div style="height:8px;border-radius:99px;background:var(--line)"><div style="width:' + pct +
+            '%;height:100%;border-radius:99px;background:' + colors[i % colors.length] + '"></div></div>';
+          wrap.appendChild(row);
+        });
+      }
+
+      function drawChart(leads) {
+        var canvas = document.getElementById("lead-chart");
+        var wrap = canvas.parentElement;
+        var W = wrap.clientWidth, H = 240;
+        var dpr = window.devicePixelRatio || 1;
+        canvas.width = Math.round(W * dpr);
+        canvas.height = Math.round(H * dpr);
+        canvas.style.width = W + "px";
+        canvas.style.height = H + "px";
+        var ctx = canvas.getContext("2d");
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, W, H);
+
+        var days = 14, now = new Date();
+        var buckets = new Array(days).fill(0);
+        var dayStart = new Date(now); dayStart.setHours(0, 0, 0, 0);
+        leads.forEach(function (l) {
+          var d = new Date(l.at); d.setHours(0, 0, 0, 0);
+          var diff = Math.round((dayStart - d) / 864e5);
+          if (diff >= 0 && diff < days) buckets[days - 1 - diff]++;
+        });
+        var max = Math.max(1, Math.max.apply(null, buckets));
+        var padL = 26, padR = 12, padT = 12, padB = 26;
+        var cw = W - padL - padR, ch = H - padT - padB;
+
+        ctx.font = "11px Inter, sans-serif";
+        ctx.fillStyle = "#64748b";
+        for (var g = 0; g <= 4; g++) {
+          var y = padT + ch - g / 4 * ch;
+          ctx.strokeStyle = "rgba(148,163,184,.18)";
+          ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(W - padR, y); ctx.stroke();
+          ctx.fillText(String(Math.round(g / 4 * max)), 2, y + 4);
+        }
+
+        var color = getComputedStyle(document.documentElement).getPropertyValue("--brand").trim() || "#0d9488";
+        var fill = getComputedStyle(document.documentElement).getPropertyValue("--brand-soft").trim() || "rgba(13,148,136,.15)";
+
+        var pts = buckets.map(function (v, i) {
+          var x = padL + cw * (i + 0.5) / days;
+          var y = padT + ch - (v / max) * ch;
+          return [x, y];
+        });
+
+        ctx.beginPath();
+        ctx.moveTo(pts[0][0], padT + ch);
+        pts.forEach(function (p) { ctx.lineTo(p[0], p[1]); });
+        ctx.lineTo(pts[pts.length - 1][0], padT + ch);
+        ctx.closePath();
+        ctx.fillStyle = fill;
+        ctx.fill();
+
+        ctx.beginPath();
+        pts.forEach(function (p, i) { i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]); });
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2;
+        ctx.lineJoin = "round";
+        ctx.stroke();
+
+        pts.forEach(function (p, i) {
+          if (buckets[i]) {
+            ctx.beginPath(); ctx.arc(p[0], p[1], 3, 0, Math.PI * 2);
+            ctx.fillStyle = color; ctx.fill();
+          }
+          if (i % 2 === 0 || i === days - 1) {
+            var label = new Date(dayStart).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
+            ctx.fillStyle = "#94a3b8";
+            ctx.textAlign = "center";
+            ctx.fillText(label, p[0], H - 8);
+          }
+          dayStart = new Date(dayStart - 864e5);
+        });
+      }
+
+      window.addEventListener("resize", function () { if (!dashEl.hidden) render(); });
+
+      function seedDemo() {
+        var days = function (n) { return new Date(Date.now() - n * 864e5).toISOString(); };
+        var rows = [
+          { canal: "form-agenda", origem: "instagram", nome: "Marina Duarte", telefone: "(11) 98811-2203", detalhe: "Clareamento · " + fmtDate(days(0)) + " (Manhã) · Unidade Paulista", at: days(0) },
+          { canal: "wa-float", origem: "google", nome: "Carlos Andrade", telefone: "(11) 98227-3390", detalhe: "Olá! Quero agendar uma avaliação.", at: days(1) },
+          { canal: "form-contato", origem: "facebook", nome: "Fernanda Pires", telefone: "(11) 98134-7781", detalhe: "Orçamento de implantes", at: days(2) },
+          { canal: "wa-header", origem: "instagram", nome: "Lucas Menezes", telefone: "(11) 97988-1421", detalhe: "Dúvida sobre lentes de contato", at: days(3) },
+          { canal: "form-agenda", origem: "google", nome: "Beatriz Nogueira", telefone: "(11) 96445-8872", detalhe: "Implantes · " + fmtDate(days(4)) + " (Tarde) · Unidade Jardins", at: days(4) },
+          { canal: "wa-cliente", origem: "google", nome: "Rafael Prado", telefone: "(11) 99810-6654", detalhe: "Preciso de ajuda com a Área do Paciente.", at: days(5) },
+          { canal: "form-contato", origem: "instagram", nome: "Sofia Alcântara", telefone: "(11) 98233-5510", detalhe: "Valores da ortodontia", at: days(7) },
+          { canal: "wa-float", origem: "(direto)", nome: "—", telefone: "", detalhe: "Olá! Quero mais informações.", at: days(9) },
+          { canal: "form-agenda", origem: "google", nome: "Tiago Moreira", telefone: "(11) 97751-2209", detalhe: "Avaliação geral · " + fmtDate(days(11)) + " (Manhã) · Unidade Paulista", at: days(11) },
+          { canal: "wa-header", origem: "instagram", nome: "Ana Luísa", telefone: "(11) 96002-9871", detalhe: "Preciso de ajuda com o agendamento", at: days(12) }
+        ];
+        rows.forEach(function (r) { r.id = Math.random().toString(36).slice(2, 8); });
+        saveLeads(rows);
+      }
+
+      function enter() {
+        authEl.hidden = true;
+        dashEl.hidden = false;
+        sessionStorage.setItem(LS, "1");
+        render();
+      }
+
+      function show() {
+        if (SESSION === "1" || location.hash === "#demo") {
+          if (location.hash === "#demo") seedDemo();
+          SESSION = "1";
+        }
+        if (SESSION === "1") {
+          enter();
+          return;
+        }
+        authEl.hidden = false;
+        dashEl.hidden = true;
+        document.getElementById("admin-login").addEventListener("submit", function (e) {
+          e.preventDefault();
+          var v = document.getElementById("adm-pass").value;
+          if (v === "vitalis") { enter(); }
+          else { document.getElementById("adm-error").hidden = false; }
+        });
+      }
+
+      document.getElementById("logout-btn").addEventListener("click", function () {
+        sessionStorage.removeItem(LS);
+        dashEl.hidden = true;
+        authEl.hidden = false;
+      });
+      document.getElementById("demo-btn").addEventListener("click", function () {
+        seedDemo();
+        render();
+        window.vitalisToast && window.vitalisToast("Cenário de demonstração carregado.");
+      });
+      document.getElementById("export-btn").addEventListener("click", function () {
+        var leads = getLeads();
+        var rows = [["data", "canal", "nome", "telefone", "origem", "detalhe"]];
+        leads.forEach(function (l) { rows.push([l.at.slice(0, 10), l.canal, l.nome, l.telefone, l.origem, l.detalhe]); });
+        var csv = "\uFEFF" + rows.map(function (r) { return r.map(function (c) { return '"' + String(c).replace(/"/g, '""') + '"'; }).join(";"); }).join("\n");
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
+        a.download = "leads-clinica-vitalis.csv";
+        a.click();
+        URL.revokeObjectURL(a.href);
+      });
+      document.getElementById("clear-btn").addEventListener("click", function () {
+        saveLeads([]);
+        render();
+        window.vitalisToast && window.vitalisToast("Dados de demonstração apagados.");
+      });
+
+      show();
+    });
+  </script>
+</body>
+</html>

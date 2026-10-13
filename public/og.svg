@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Clínica Vitalis — Odontologia premium em São Paulo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#0b1120"/>
+    </linearGradient>
+    <linearGradient id="tooth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d7f5ee"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".82" cy=".42" r=".5">
+      <stop offset="0" stop-color="#2dd4bf" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="960" cy="300" r="340" fill="url(#glow)"/>
+  <circle cx="150" cy="560" r="180" fill="#f59e0b" opacity=".14"/>
+  <g transform="translate(880 118) scale(1.16)" fill="url(#tooth)" stroke="#5eead4" stroke-width="5">
+    <path d="M100 0C38 0 12 50 19 96c6 44 28 80 55 116 11 14 27 14 37 0 27-36 49-72 55-116C173 50 162 0 100 0z"/>
+  </g>
+  <circle cx="948" cy="212" r="9" fill="#5eead4"/><circle cx="1026" cy="212" r="9" fill="#5eead4"/>
+  <path d="M941 244q40 36 80 0" fill="none" stroke="#5eead4" stroke-width="9" stroke-linecap="round"/>
+  <g fill="url(#accent)">
+    <path d="M1092 138l7 18 18 7-18 7-7 18-7-18-18-7 18-7z"/>
+    <path d="M846 430l6 15 15 6-15 6-6 15-6-15-15-6 15-6z" opacity=".85"/>
+  </g>
+  <rect x="80" y="196" width="52" height="52" rx="14" fill="#0d9488"/>
+  <path d="M106 208c-3.4 0-4.7 1-6.7 1.4S93.9 209 93 211s2 8 3.4 12.6 1.7 7.4 2.7 7.4 1.4-2.7 2-5.4.7-4 2.7-4 2 1.3 2.7 4 1.3 5.4 2.7 5.4 1.4-2.7 2.7-7.4S117 213 116 211s-4-1.6-6-2-3.4-1-6.7-1z" fill="#ffffff"/>
+  <text x="80" y="312" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="74" font-weight="800">Clínica Vitalis</text>
+  <text x="80" y="378" fill="#5eead4" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="600">Odontologia premium em São Paulo</text>
+  <text x="80" y="452" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="30">Implantes · Ortodontia · Estética dental</text>
+</svg>

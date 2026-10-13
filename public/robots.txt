@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /cliente.html
+
+Sitemap: https://www.clinicavitalis.com.br/sitemap.xml

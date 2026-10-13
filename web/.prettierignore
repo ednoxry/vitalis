@@ -1,0 +1,16 @@
+node_modules
+.next
+out
+legacy
+coverage
+playwright-report
+test-results
+package-lock.json
+next-env.d.ts
+
+# JS herdado do site estático (mantido sem reformatação)
+lib/interactions.js
+lib/tooth3d.js
+
+# mantido idêntico ao site estático
+public/sw.js

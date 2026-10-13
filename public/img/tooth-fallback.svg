@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img" aria-label="Ilustração de um dente">
+  <defs>
+    <linearGradient id="tv-tooth" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.55" stop-color="#eafcf8"/>
+      <stop offset="1" stop-color="#a7e8dd"/>
+    </linearGradient>
+    <radialGradient id="tv-glow" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#0d9488" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#0d9488" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="120" cy="140" r="120" fill="url(#tv-glow)"/>
+  <path fill="url(#tv-tooth)" stroke="#0f766e" stroke-width="3" stroke-linejoin="round"
+    d="M120 22c-40 0-66 34-66 74 0 35 13 55 19 95 4 25 10 60 26 60 13 0 13-50 21-50s8 50 21 50c16 0 22-35 26-60 6-40 19-60 19-95 0-40-26-74-66-74z"/>
+  <path fill="#ffffff" fill-opacity="0.55"
+    d="M92 62c-10 8-16 22-16 38 0 10 2 19 5 27 2-30 8-50 20-62 4-4-4-7-9-3z"/>
+</svg>
