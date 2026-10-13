@@ -5,7 +5,7 @@ const csp = [
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://challenges.cloudflare.com`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://*.tile.openstreetmap.org",
-  "font-src 'self' data:",
+  "font-src 'self' data: https://fonts.googleapis.com",
   `connect-src 'self' https://*.supabase.co${isDev ? " ws: http: https:" : ""}`,
   "frame-src 'self' https://challenges.cloudflare.com https://www.openstreetmap.org",
   "form-action 'self'",
