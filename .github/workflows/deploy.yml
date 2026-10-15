@@ -45,7 +45,7 @@ jobs:
       - name: Preparar arquivos
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: .next
 
       - name: Publicar site
         id: deployment
